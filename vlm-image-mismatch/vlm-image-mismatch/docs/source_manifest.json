@@ -1,0 +1,259 @@
+{
+  "source_archive": "vlm_mi_experiments.zip",
+  "included": [
+    {
+      "file": "run_vlm_mi_experiments.py",
+      "purpose": "Shared VLM loading, input preparation, activation export and QA engine",
+      "source_sha256": "69513ccd599b46f351e455bc0299df3b6bf22c94e77a55f2ccbcf2a5e3d6aed6",
+      "release_sha256": "69513ccd599b46f351e455bc0299df3b6bf22c94e77a55f2ccbcf2a5e3d6aed6",
+      "modified": false
+    },
+    {
+      "file": "prompts.py",
+      "purpose": "QA prompts used by retrieval evaluation and test generation",
+      "source_sha256": "e9e7951236732e5b7fac4bf1abaad2200e39595df574004c2336cc324e964c01",
+      "release_sha256": "e9e7951236732e5b7fac4bf1abaad2200e39595df574004c2336cc324e964c01",
+      "modified": false
+    },
+    {
+      "file": "run_mismatch_pipeline.py",
+      "purpose": "Train calibration and frozen validation orchestration",
+      "source_sha256": "ac853dd24063e335ae9c80b11286a6eec68f6235c35f9b3084b763b0322da2a4",
+      "release_sha256": "d276b848622456a22855387265d634d7577c79e87391ba7b1aa41b783bac6a5b",
+      "modified": true
+    },
+    {
+      "file": "analyze_mismatch_activations.py",
+      "purpose": "Head selection, probes, confidence baseline and exclusion policy analysis",
+      "source_sha256": "a8d9889b01768d287cef20b0968daa0519514d876ed0bee16d04d6f5dec5d0d1",
+      "release_sha256": "a8d9889b01768d287cef20b0968daa0519514d876ed0bee16d04d6f5dec5d0d1",
+      "modified": false
+    },
+    {
+      "file": "analyze_dimension_matched_controls.py",
+      "purpose": "Layer-matched random four-head controls",
+      "source_sha256": "c4b10066b7355478462f61b0287e932796e13b39432b5afa76dcc77f9bc923bd",
+      "release_sha256": "c4b10066b7355478462f61b0287e932796e13b39432b5afa76dcc77f9bc923bd",
+      "modified": false
+    },
+    {
+      "file": "b0_direct_query.py",
+      "purpose": "Reported relevance prompt, selected as V2 by reproduce.py",
+      "source_sha256": "9d28c78eb48b8ed8d6e772d9f5d9e58f1d854813ae49003410dfeaa77227c547",
+      "release_sha256": "9d28c78eb48b8ed8d6e772d9f5d9e58f1d854813ae49003410dfeaa77227c547",
+      "modified": false
+    },
+    {
+      "file": "fetch_retrieved_images.py",
+      "purpose": "Download images from an existing retrieval link dump",
+      "source_sha256": "57d66b2d0328e80f482de4a053c7ae05e24ea4fcea1c91e93445928b63fb75b0",
+      "release_sha256": "57d66b2d0328e80f482de4a053c7ae05e24ea4fcea1c91e93445928b63fb75b0",
+      "modified": false
+    },
+    {
+      "file": "retrieval_eval.py",
+      "purpose": "Multi-image validation scoring and activation export",
+      "source_sha256": "3655f3a9f78fe2ae833722da66fc2ba73e54f1331961cb4844777e8edc254726",
+      "release_sha256": "3655f3a9f78fe2ae833722da66fc2ba73e54f1331961cb4844777e8edc254726",
+      "modified": false
+    },
+    {
+      "file": "analyze_retrieval.py",
+      "purpose": "Separate retrieval probe fitting",
+      "source_sha256": "e913c5a4a9650e9e38ba4df5cb510a9c7a424a133053f3dd06810b705cc17f85",
+      "release_sha256": "e913c5a4a9650e9e38ba4df5cb510a9c7a424a133053f3dd06810b705cc17f85",
+      "modified": false
+    },
+    {
+      "file": "submit_test.py",
+      "purpose": "Local baseline/naive/gated answer generation; no remote submission",
+      "source_sha256": "cedc65d52533c5b0a5f05317fb7301d2ae215037d2920e9cba76bc634652fe86",
+      "release_sha256": "cedc65d52533c5b0a5f05317fb7301d2ae215037d2920e9cba76bc634652fe86",
+      "modified": false
+    },
+    {
+      "file": "extract_attached_images.py",
+      "purpose": "Extract attachment decisions from generated JSONL",
+      "source_sha256": "3b757d1772b58d5724b88ac353363b2632a5679601bd50034fa069e62c4840ee",
+      "release_sha256": "3b757d1772b58d5724b88ac353363b2632a5679601bd50034fa069e62c4840ee",
+      "modified": false
+    },
+    {
+      "file": "mismatch_routing_config.json",
+      "purpose": "Paper activation export configuration",
+      "source_sha256": "074ba11e08471272ff6ac6c08be2bc02a4d18228ea1e1774921e98d5a6980b15",
+      "release_sha256": "1d6782432a2db7276c90e3e4fc462db921d42d88fdbbe45f3bd13c2999e6bcf6",
+      "modified": true
+    }
+  ],
+  "excluded": [
+    {
+      "file": ".ipynb_checkpoints/run_attach_from_links-checkpoint.sh",
+      "reason": "Generated cache/checkpoint"
+    },
+    {
+      "file": "__pycache__/analyze_mismatch_activations.cpython-311.pyc",
+      "reason": "Generated cache/checkpoint"
+    },
+    {
+      "file": "__pycache__/prompts.cpython-311.pyc",
+      "reason": "Generated cache/checkpoint"
+    },
+    {
+      "file": "__pycache__/retrieval_eval.cpython-311.pyc",
+      "reason": "Generated cache/checkpoint"
+    },
+    {
+      "file": "__pycache__/run_vlm_mi_experiments.cpython-311.pyc",
+      "reason": "Generated cache/checkpoint"
+    },
+    {
+      "file": "analyze_steering_null.py",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "causal_sweep_varco14b_l22.json",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "detector_disambiguation_config.json",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "extract_causal_scores.py",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "gated_label_correction_config.json",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "gen_steering_null_config.py",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "paper_targeted_config.json",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "qwen_l63_ablation_config.json",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "qwen_l63_validation_config.json",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "requirements.txt",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "run_all_experiments.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_attach_from_links.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_b0_baseline.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_causal_sweep.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_detector_disambiguation.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_gated_label_correction.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_layer_discovery.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_literature_all.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_mismatch_followups.py",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_mismatch_followups.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_mismatch_routing.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_paper_targeted.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_qwen_l63_followups.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_qwen_layer_discovery.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_retrieval_pipeline.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_semantic_gated.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_steering_null.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_steering_pipeline.py",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "run_steering_pipeline.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_steering_single_head.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_submission.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "run_visual_contrast.sh",
+      "reason": "Superseded by reproduce.py"
+    },
+    {
+      "file": "semantic_gated_config.json",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "steering_null_varco14b_l22.json",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "steering_single_varco14b_l22.json",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "suite_config.example.json",
+      "reason": "Outside the reported experiment entry points"
+    },
+    {
+      "file": "visual_contrast_config.json",
+      "reason": "Outside the reported experiment entry points"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "model": {
+    "id": "Qwen/Qwen3-VL-32B-Instruct",
+    "family": "qwen3_vl",
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "attn_implementation": "sdpa",
+    "trust_remote_code": true,
+    "num_heads": "auto"
+  },
+  "data": {
+    "input_data": "${MISMATCH_INPUT_DATA}",
+    "image_roots": {
+      "original": "${MISMATCH_IMAGE_ROOT}",
+      "blurred": "${MISMATCH_BLURRED_ROOT}"
+    }
+  },
+  "output_dir": "${MISMATCH_OUTPUT_DIR}",
+  "seed": 17,
+  "activation_cache_gb": 0.5,
+  "prompt_keys": {
+    "MC": "MC_1",
+    "SA": "SA_1",
+    "LA": "LA_1"
+  },
+  "experiments": [
+    {
+      "name": "01_mismatch_activation_export",
+      "type": "mismatch_activation_export",
+      "profiles": [
+        "quick",
+        "full"
+      ],
+      "mode": "${MISMATCH_MODE}",
+      "calibration_path": "${MISMATCH_CALIBRATION_PATH}",
+      "layers": "all",
+      "position": "last",
+      "legacy_heads": [
+        "63:63",
+        "63:45"
+      ],
+      "strict_length_match": true,
+      "canonical_image_size": [
+        672,
+        672
+      ],
+      "image_fit_mode": "letterbox",
+      "blur_radius": 12.0,
+      "shuffle_seed": 17,
+      "storage_dtype": "float16",
+      "calibration_capture_text_confound": true,
+      "evaluation_capture_text_confound": false,
+      "calibration_permutation_sensitivity_count": 1,
+      "evaluation_permutation_sensitivity_count": 0,
+      "quick_limit": 30,
+      "full_limit": null
+    }
+  ]
+}
