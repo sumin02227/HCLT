@@ -16,9 +16,6 @@
 | 검색 후보의 별도 판별기 학습 | `retrieval_eval.py`, `analyze_retrieval.py` | `retrieval_probe.json` |
 | 검색 없음 / 모두 부착 / 선택적 부착 | `submit_test.py` | 로컬 JSONL / CSV / 답변 JSON |
 
-`submit_test.py`는 파일을 생성하는 코드이며 외부 서비스에 자동 제출하지 않습니다.
-검색 후보 **생성·순위화 코드와 원본 검색 링크 목록은 이 ZIP에 없었습니다**. `fetch_retrieved_images.py`는 이미 확보한 링크의 이미지를 다운로드하는 도구입니다.
-
 ## 환경
 
 Python 3.10 이상과 해당 모델을 실행할 GPU 환경을 준비합니다. 원본에는 Python 3.11 캐시가 있었지만 정확한 패키지 버전·CUDA·GPU 구성은 기록돼 있지 않았습니다.
@@ -40,7 +37,7 @@ CUDA_VISIBLE_DEVICES=0 python reproduce.py mismatch --profile quick
 
 ## 데이터 준비
 
-데이터를 이용 가능한 경로에서 별도로 준비합니다. 원본 질문·이미지의 재배포 권한은 이 코드 공개와 별개입니다.
+데이터를 이용 가능한 경로에서 별도로 준비합니다.
 
 ```text
 data/
@@ -86,8 +83,6 @@ outputs/qwen3_vl_32b_mismatch_validation_full/
   cpu_analysis/detector_metrics_frozen.csv
   cpu_analysis/routing_metrics_frozen.csv
 ```
-
-**논문에서 읽을 행**: 순수 내부 표현은 `activation_mismatch`, 확신도는 `uncertainty`, 이미지 제외 임계값 정책은 `youden`입니다. 원본 calibration JSON의 `primary_model`은 `uncertainty_plus_activation_mismatch`, `primary_threshold_policy`는 `primary_fpr`입니다. 원본 분석기를 보존했으므로 이 기본 메타데이터를 논문의 최종 정책이라고 해석하지 마세요. CSV에는 각 모델·임계값 조합이 별도로 저장됩니다.
 
 ### 2. 관련성 프롬프트
 
